@@ -27,16 +27,31 @@ namespace ClientServerUsingNamedPipes.Interfaces
 
     public class ClientConnectedEventArgs : EventArgs
     {
-        public string ClientId { get; set; }
+        public ClientConnectedEventArgs(string clientId)
+        {
+            this.ClientId = clientId;
+        }
+        
+        public string ClientId { get; private set; }
     }
 
     public class ClientDisconnectedEventArgs : EventArgs
     {
-        public string ClientId { get; set; }
+        public ClientDisconnectedEventArgs(string clientId)
+        {
+            this.ClientId = clientId;
+        }
+        
+        public string ClientId { get; private set; }
     }
 
     public class MessageReceivedEventArgs : EventArgs
     {
-        public string Message { get; set; }
+        public MessageReceivedEventArgs(string message)
+        {
+            this.Message = message;
+        }
+        
+        public string Message { get; private set; }
     }
 }
